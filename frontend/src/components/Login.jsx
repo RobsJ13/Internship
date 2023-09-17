@@ -1,54 +1,46 @@
-import React, { useState } from 'react';
-import { TextField, Button, Grid, Typography } from '@mui/material';
-import { makeStyles } from '@mui/material/styles';;
+import React, { useState } from 'react'
+import "./Login.css"
+import user_icon from "./Icons/person.png"
+import email_icon from "./Icons/email.png"
+import pwd_icon from "./Icons/password.png"
 
-const useStyles = makeStyles({
-  container: {
-    width: '300px',
-    margin: 'auto',
-    marginTop: '100px',
-    padding: '20px',
-    borderRadius: '10px',
-    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
-  },
-});
 
 const Login = () => {
-  const classes = useStyles();
-
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleLogin = () => {
-    // Implement login logic here
-    console.log('Logging in with:', username, password);
-  };
+  const  [page,setPage] =useState("Sign Up")
 
   return (
-    <Grid container className={classes.container}>
-      <Typography variant="h4" gutterBottom>
-        Login
-      </Typography>
-      <TextField
-        label="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        fullWidth
-        margin="normal"
-      />
-      <TextField
-        label="Password"
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        fullWidth
-        margin="normal"
-      />
-      <Button variant="contained" color="primary" onClick={handleLogin}>
-        Login
-      </Button>
-    </Grid>
-  );
-};
+    <div>
+      <div className="container">
+        <div className="header">
+          <div className="text">{page}</div>
+        </div>
+        <div className="inputs">
+          <div className="input">
+            <img src={user_icon} alt="username" />
+            <input type="text" placeholder='Username' />
+          </div>
+          {page==="Login"?<div></div>:<div className="input">
+            <img src={email_icon} alt="email" />
+            <input type="email" placeholder='E-mail' />
+          </div>}
+          
+          <div className="input">
+            <img src={pwd_icon} alt="password"  />
+            <input type="password"placeholder='Password' />
+          </div>
+        </div>
+        {page==="Sign Up"?<div></div>:<div className="forgot_pwd">Forgot Password? <span>Click Here</span></div>}
+        <div className='submit-btn-container'></div>
+        <div className="submit-btn">
+            <div className="btn">Confirm {page} </div>
+          </div>
+        <div className="submit-container">
+          <div className={page==="Login"?"submit gray":"submit"} onClick={()=>{setPage("Sign Up")}}>Sign Up</div>
+          <div className={page==="Sign Up"?"submit gray":"submit"}onClick={()=>{setPage("Login")}}>Login</div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
-export default Login;
+export default Login
