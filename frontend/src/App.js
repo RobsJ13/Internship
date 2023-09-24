@@ -1,11 +1,15 @@
 
-import Login from "./components/Login";
+import Header from "./components/Header";
+import Home from "./components/Home";
+// import Login from "./components/Login";
 
 function App() {
   return (
     <div >
-      <h1 align="center" >Welcome to Movie Booking System</h1>
-      <Login />
+      <Header/> <br/><br/> 
+      {/* <Login/> */}
+      <Home/> 
+
     </div>
   );
 }

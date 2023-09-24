@@ -1,0 +1,45 @@
+/* Styling for the home container */
+.home {
+    padding: 20px;
+  }
+  
+  /* Styling for the carousel images */
+  .carousel-image {
+    height: 400px; /* Adjust the height as needed */
+    object-fit: cover;
+  }
+  
+  /* Styling for the movie card container */
+  .movie-container {
+    margin-top: 20px;
+  }
+  
+  /* Styling for individual movie cards */
+  .movie-card {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: transform 0.2s;
+  }
+  
+  /* Hover effect for movie cards */
+  .movie-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Styling for movie titles */
+  .card-title {
+    font-weight: bold;
+  }
+  
+  /* Styling for the "Book Ticket" button */
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  /* Styling for the "Book Ticket" button on hover */
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
